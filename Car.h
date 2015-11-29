@@ -14,7 +14,8 @@
 #ifndef CAR_H
 #define CAR_H
 
-class Car {
+class Car
+{
 public:
     Car() {}
     ~Car() {}

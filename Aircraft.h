@@ -14,10 +14,11 @@
 #ifndef AIRCRAFT_H
 #define AIRCRAFT_H
 
-class Aircraft {
+class Aircraft
+{
 public:
     Aircraft() {}
-   ~Aircraft() { }
+   ~Aircraft() {}
    void TakeOff() {}
 private:
 
