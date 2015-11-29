@@ -13,10 +13,10 @@
 
 #include <iostream>
 
-#include "Ship.h"
-#include "Car.h"
-#include "Vehicle.h"
-#include "Aircraft.h"
+#include "ship.h"
+#include "car.h"
+#include "aircraft.h"
+#include "vehicle.h"
 
 using namespace std;
 
