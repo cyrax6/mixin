@@ -11,11 +11,6 @@
  * Created on November 29, 2015, 4:42 PM
  */
 
+#include <vector>
 #include "world.h"
-
-World::World() { }
-
-World::World(const World& orig) { }
-
-World::~World() { }
 

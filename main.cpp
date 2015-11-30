@@ -12,11 +12,12 @@
  */
 
 #include <iostream>
-
+#include <vector>
 #include "ship.h"
 #include "car.h"
 #include "aircraft.h"
 #include "vehicle.h"
+#include "world.h"
 
 using namespace std;
 
@@ -34,6 +35,9 @@ main(int argc, char** argv)
   
   Vehicle<Aircraft> aircraft;
   aircraft.TakeOff();
+  
+  World<Vehicle<Car>, Vehicle<Ship>, Vehicle<Aircraft>> world;
+  world.Add(car);
   
   return 0;
 }
