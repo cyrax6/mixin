@@ -17,6 +17,8 @@
 #include "car.h"
 #include "aircraft.h"
 #include "vehicle.h"
+#include "collection_type.h"
+#include "vehicle_specialisations.h"
 #include "world.h"
 
 using namespace std;

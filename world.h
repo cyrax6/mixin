@@ -14,44 +14,48 @@
 #ifndef WORLD_H
 #define WORLD_H
 
+#include "vehicle_specialisations.h"
+
+
 template <class CarType, class ShipType, class AircraftType>
-class World
+class World  
+            : CollectionType<CarType>,
+              CollectionType<ShipType>,
+              CollectionType<AircraftType>
 {
 public:
 
-    template <class T> void Add(const T& vehicle_type)
+    template <class T> void Add(T& vehicle_type)
     {
-        std::vector<T>& collection = GetCollection(vehicle_type);
+        auto collection = static_cast<CollectionType<T>*>(this)->GetCollection(vehicle_type);
+        //collection.push_back(vehicle_type);
     }
     ~World()
     {
-        cars.empty();
-        ships.empty();
-        aircrafts.empty();
     }
 
 private:
 
-    std::vector<CarType> cars;
-    std::vector<ShipType> ships;
-    std::vector<AircraftType> aircrafts;
+//    CollectionType<CarType> cars;
+//    CollectionType<ShipType> ships;
+//    CollectionType<AircraftType> aircrafts;
 
     //std::vector<T>& GetCollection() const { }
-
-    std::vector<CarType>& GetCollection(const CarType& car)
-    {
-        return cars;
-    }
-
-    std::vector<ShipType>& GetCollection(const ShipType& ship)
-    {
-        return ships;
-    }
-
-    std::vector<AircraftType>& GetCollection(const AircraftType& aircraft)
-    {
-        return aircrafts;
-    }
+//
+//    CollectionType<CarType>& GetCollection(const CarType& car)
+//    {
+//        return cars;
+//    }
+//
+//    CollectionType<ShipType>& GetCollection(const ShipType& ship)
+//    {
+//        return ships;
+//    }
+//
+//    CollectionType<AircraftType>& GetCollection(const AircraftType& aircraft)
+//    {
+//        return aircrafts;
+//    }
 };
 
 #endif /* WORLD_H */
