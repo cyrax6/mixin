@@ -41,6 +41,8 @@ main(int argc, char** argv)
   
   World<Vehicle<Car>, Vehicle<Ship>, Vehicle<Aircraft>> world;
   world.Add(car);
+  world.Add(ship);
+  world.Add(aircraft);
   
   return 0;
 }
