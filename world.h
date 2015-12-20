@@ -15,7 +15,7 @@
 #define WORLD_H
 
 #include "vehicle_specialisations.h"
-
+#include <cassert>
 
 template <class CarType, class ShipType, class AircraftType>
 class World  
@@ -27,35 +27,16 @@ public:
 
     template <class T> void Add(T& vehicle_type)
     {
-        auto collection = static_cast<CollectionType<T>*>(this)->GetCollection(vehicle_type);
-        //collection.push_back(vehicle_type);
+        auto post_add = static_cast<CollectionType<T>*>(this)->Add(vehicle_type);
+        auto default_collection = static_cast<CollectionType<T>*>(this)->GetCollection();
+        
+        assert(post_add.size() == default_collection.size());
     }
     ~World()
     {
     }
 
 private:
-
-//    CollectionType<CarType> cars;
-//    CollectionType<ShipType> ships;
-//    CollectionType<AircraftType> aircrafts;
-
-    //std::vector<T>& GetCollection() const { }
-//
-//    CollectionType<CarType>& GetCollection(const CarType& car)
-//    {
-//        return cars;
-//    }
-//
-//    CollectionType<ShipType>& GetCollection(const ShipType& ship)
-//    {
-//        return ships;
-//    }
-//
-//    CollectionType<AircraftType>& GetCollection(const AircraftType& aircraft)
-//    {
-//        return aircrafts;
-//    }
 };
 
 #endif /* WORLD_H */

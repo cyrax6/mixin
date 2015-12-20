@@ -13,6 +13,7 @@
 
 #include <iostream>
 #include <vector>
+#include <list>
 #include "ship.h"
 #include "car.h"
 #include "aircraft.h"
